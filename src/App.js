@@ -5,6 +5,7 @@ import Card from "./components/Card";
 import Detail from "./pages/Detail";
 import About from "./pages/About";
 import Event from "./pages/Event";
+import Cart from "./pages/Cart";
 import { useState } from "react";
 import data from "./data";
 import { Routes, Route, useNavigate } from "react-router-dom";
@@ -54,6 +55,13 @@ function App() {
             >
               Event
             </Nav.Link>
+            <Nav.Link
+              onClick={() => {
+                navigate("/cart");
+              }}
+            >
+              Cart
+            </Nav.Link>
           </Nav>
         </Container>
       </Navbar>
@@ -88,6 +96,7 @@ function App() {
           <Route path="one" element={<div>첫 주문시 양배추즙 서비스</div>} />
           <Route path="two" element={<div>생일기념 쿠폰받기</div>} />
         </Route>
+        <Route path="/cart" element={<Cart />} />
 
         <Route path="*" element={<h1>404 Page</h1>} />
       </Routes>
